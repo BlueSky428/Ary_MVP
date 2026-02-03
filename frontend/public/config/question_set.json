@@ -1,0 +1,51 @@
+{
+  "question_set_id": "legal_v1",
+  "version": "0.1.0",
+  "questions": [
+    {
+      "question_id": "Q1",
+      "prompt": "What is the legal strategy or course of action you are considering in this matter?",
+      "purpose": "Strategy Under Consideration",
+      "must_elicit": [],
+      "must_not_elicit": [],
+      "answer_mode": "single",
+      "expected_mechanisms": ["M1"]
+    },
+    {
+      "question_id": "Q2",
+      "prompt": "What factors made this strategy more or less suitable in that situation?",
+      "purpose": "Considerations for / against",
+      "must_elicit": [],
+      "must_not_elicit": [],
+      "answer_mode": "multi_atomic",
+      "expected_mechanisms": ["M2", "M6", "M7", "M8"]
+    },
+    {
+      "question_id": "Q3",
+      "prompt": "What legal, procedural, practical, or resource constraints affected whether or how this strategy could be pursued?",
+      "purpose": "Constraints recognized",
+      "must_elicit": [],
+      "must_not_elicit": [],
+      "answer_mode": "multi_atomic",
+      "expected_mechanisms": ["M3", "M8"]
+    },
+    {
+      "question_id": "Q4",
+      "prompt": "What was uncertain or unknown to you at that stage regarding this strategy?",
+      "purpose": "Uncertainty acknowledged",
+      "must_elicit": [],
+      "must_not_elicit": [],
+      "answer_mode": "multi_atomic",
+      "expected_mechanisms": ["M4", "M7"]
+    },
+    {
+      "question_id": "Q5",
+      "prompt": "Were there other legal strategies you considered but decided not to pursue at that time?",
+      "purpose": "Alternatives considered but not pursued",
+      "must_elicit": [],
+      "must_not_elicit": [],
+      "answer_mode": "multi_atomic",
+      "expected_mechanisms": ["M5", "M2"]
+    }
+  ]
+}

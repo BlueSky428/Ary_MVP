@@ -1,0 +1,62 @@
+{
+  "mechanism_set_id": "legal_mechanisms_v1",
+  "version": "0.1.0",
+  "mechanisms": [
+    {
+      "mechanism_id": "M1",
+      "name": "Strategy Description",
+      "definition": "Description of the legal strategy or course of action under consideration.",
+      "allowed_question_ids": ["Q1"],
+      "required_fields": []
+    },
+    {
+      "mechanism_id": "M2",
+      "name": "Trade-off Articulation",
+      "definition": "Factors that made the strategy more or less suitable; pros and cons.",
+      "allowed_question_ids": ["Q2", "Q5"],
+      "required_fields": []
+    },
+    {
+      "mechanism_id": "M3",
+      "name": "Constraint Recognition",
+      "definition": "Legal, procedural, practical, or resource constraints affecting the strategy.",
+      "allowed_question_ids": ["Q3"],
+      "required_fields": []
+    },
+    {
+      "mechanism_id": "M4",
+      "name": "Uncertainty Acknowledgment",
+      "definition": "What was uncertain or unknown at that stage regarding the strategy.",
+      "allowed_question_ids": ["Q4"],
+      "required_fields": []
+    },
+    {
+      "mechanism_id": "M5",
+      "name": "Rejected Alternative Strategy",
+      "definition": "Other legal strategies considered but not pursued.",
+      "allowed_question_ids": ["Q5"],
+      "required_fields": []
+    },
+    {
+      "mechanism_id": "M6",
+      "name": "Priority Declaration",
+      "definition": "Priority or relative importance of factors (priority marker statements).",
+      "allowed_question_ids": ["Q2"],
+      "required_fields": []
+    },
+    {
+      "mechanism_id": "M7",
+      "name": "Conditional Strategy Logic",
+      "definition": "If/then logic or contingent action based on conditions or uncertainty.",
+      "allowed_question_ids": ["Q2", "Q4"],
+      "required_fields": []
+    },
+    {
+      "mechanism_id": "M8",
+      "name": "Information Basis Reference",
+      "definition": "Reference to cited information or source grounding a statement.",
+      "allowed_question_ids": ["Q2", "Q3"],
+      "required_fields": []
+    }
+  ]
+}
