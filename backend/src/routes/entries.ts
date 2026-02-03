@@ -30,8 +30,9 @@ router.get('/', (req, res) => {
 
 /** DELETE /sessions/:session_id/entries/:entry_id — Remove entry (draft only) */
 router.delete('/:entry_id', (req, res) => {
-  const session_id = (req.params as { session_id: string }).session_id;
-  const entry_id = (req.params as { entry_id: string }).entry_id;
+  const params = req.params as { session_id: string; entry_id: string };
+  const session_id = params.session_id;
+  const entry_id = params.entry_id;
   const session = getSession(session_id);
   if (!session) return res.status(404).json({ error: 'Session not found' });
   if (session.status !== 'draft') return res.status(403).json({ error: 'Cannot delete entries after finalize' });
