@@ -123,6 +123,9 @@ Push to your connected branch or click **Redeploy** in Vercel. The frontend will
 
 ## 5. Troubleshooting
 
+- **"Mixed Content" or "Failed to fetch" — request blocked**
+  The frontend is on **HTTPS** (Vercel) but **VITE_API_URL** points to **HTTP** (e.g. `http://65.109.25.36:3001`). Browsers block HTTPS pages from calling HTTP APIs. Fix: use a backend URL that is **HTTPS**. Easiest is **ngrok** — run `ngrok http 3001` and set **VITE_API_URL** in Vercel to the **https://…ngrok-free.app** URL (no trailing slash), then redeploy. Port forwarding with a raw IP gives only HTTP unless you add TLS yourself (e.g. reverse proxy with a certificate).
+
 - **404 on `/api/cases` or requests go to your Vercel domain**  
   The frontend is calling the API on the same origin (Vercel) instead of your backend. Fix: (1) In Vercel, set **VITE_API_URL** to your backend’s **public** URL (e.g. ngrok or `http://YOUR_IP:3001`). (2) **Redeploy** the frontend (env vars are baked in at build time). (3) Ensure the backend is running and reachable at that URL (e.g. open `YOUR_BACKEND_URL/cases` in a new tab and confirm you get JSON).
 

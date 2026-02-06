@@ -111,8 +111,6 @@ To view logs: `pm2 logs ary-api`
 
 The frontend on Vercel runs in the user’s browser. The browser must be able to call your backend using a **public URL**. Two common options:
 
-**Important — Mixed content:** Your Vercel site is HTTPS. Browsers block HTTPS pages from loading HTTP resources. So `VITE_API_URL` must be an **HTTPS** URL. Option A (ngrok) gives HTTPS; Option B (port forward) gives `http://...`, which will be blocked when the frontend is on Vercel. For Vercel, **use ngrok** so the backend URL is `https://....ngrok-free.app`.
-
 ---
 
 ### Option A: ngrok (tunnel) — recommended to start
@@ -206,8 +204,7 @@ Your backend stays on your PC. The router forwards traffic from the internet (yo
 
 - If you used port 3001: **`http://YOUR_PUBLIC_IP:3001`**  
   Example: `http://203.0.113.45:3001`
-- **If your frontend is on Vercel (HTTPS):** This URL is HTTP, so the browser will block API requests (mixed content). Use **Option A (ngrok)** instead so you get an HTTPS backend URL.
-- If your frontend is also HTTP (e.g. local only), you can use this URL as `VITE_API_URL`.
+- Use this as `VITE_API_URL` in Vercel (no trailing slash).
 - `CORS_ORIGINS` in backend `.env` should already be your Vercel URL (Step 3).
 
 #### B.6 If your public IP changes (dynamic IP)
