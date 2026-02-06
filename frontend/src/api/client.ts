@@ -17,13 +17,25 @@ const BASE = typeof import.meta.env.VITE_API_URL === 'string' && import.meta.env
   ? import.meta.env.VITE_API_URL.replace(/\/$/, '')
   : '/api';
 
+// #region agent log
+(function () {
+  const url = `${BASE}/cases`;
+  const hasHttp = /^https?:\/\//i.test(BASE);
+  fetch('http://127.0.0.1:7247/ingest/dc048cb9-747b-4b76-a396-d8c5c8d575f4', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'client.ts:BASE', message: 'API base and first URL', data: { BASE, fullUrl: url, hasExplicitProtocol: hasHttp, rawEnv: typeof import.meta.env.VITE_API_URL !== 'undefined' ? String(import.meta.env.VITE_API_URL).slice(0, 80) : 'undefined' }, timestamp: Date.now(), sessionId: 'debug-session', hypothesisId: 'H1-H3' }) }).catch(() => {});
+})();
+// #endregion
+
 /** Resolved API base URL (for debugging: check DevTools or UI footer). */
 export function getApiBase(): string {
   return BASE;
 }
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
-  const res = await fetch(`${BASE}${path}`, {
+  const fullUrl = `${BASE}${path}`;
+  // #region agent log
+  fetch('http://127.0.0.1:7247/ingest/dc048cb9-747b-4b76-a396-d8c5c8d575f4', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'client.ts:request', message: 'fetch URL', data: { path, fullUrl }, timestamp: Date.now(), sessionId: 'debug-session', hypothesisId: 'H1' }) }).catch(() => {});
+  // #endregion
+  const res = await fetch(fullUrl, {
     headers: { 'Content-Type': 'application/json', ...options.headers },
     ...options,
   });
