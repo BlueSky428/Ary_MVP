@@ -39,6 +39,8 @@ Ary_MVP/
 └── README.md
 ```
 
+**Deploy:** Backend on your machine + frontend on Vercel → see **[DEPLOY.md](./DEPLOY.md)**.
+
 ## Quick start
 
 1. **Install (root)**  
@@ -61,6 +63,7 @@ The backend uses **SQLite** for persistence. On first run it creates:
 
 - **Default path**: `backend/data/ary.sqlite` (directory created if needed).
 - **Override**: set `DATABASE_PATH` to a full file path (e.g. `/var/lib/ary/ary.sqlite`).
+- **Production:** set `CORS_ORIGINS` to your frontend origin(s), e.g. `https://your-app.vercel.app` (see [DEPLOY.md](./DEPLOY.md)).
 
 Schema is applied automatically on startup. Backup by copying the `.sqlite` file.
 

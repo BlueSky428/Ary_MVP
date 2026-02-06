@@ -115,6 +115,14 @@ textarea {
   padding: 1.5rem;
 }
 
+.app-api-hint {
+  padding: 0.35rem 1rem;
+  font-size: 0.75rem;
+  color: var(--ary-text-muted, #666);
+  background: var(--ary-surface);
+  border-top: 1px solid var(--ary-border);
+}
+
 /* ─── Page & layout ─────────────────────────────────────────────────────── */
 
 .page {

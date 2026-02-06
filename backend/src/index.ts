@@ -4,6 +4,7 @@
  * AI proposes. Rules decide. (In V0, humans perform the decide step.)
  */
 
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import { getDb } from './db/client.js';
@@ -17,8 +18,12 @@ import artifactsRouter from './routes/artifacts.js';
 // Initialize SQLite (creates file + schema if needed)
 getDb();
 
+const corsOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(',').map((s) => s.trim()).filter(Boolean)
+  : undefined;
+
 const app = express();
-app.use(cors());
+app.use(cors(corsOrigins ? { origin: corsOrigins } : {}));
 app.use(express.json());
 
 app.use('/cases', casesRouter);

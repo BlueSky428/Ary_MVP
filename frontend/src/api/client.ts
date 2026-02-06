@@ -1,5 +1,6 @@
 /**
- * Ary V0 — API client. Base URL via Vite proxy: /api -> backend.
+ * Ary V0 — API client.
+ * Dev: /api (Vite proxy to backend). Production: set VITE_API_URL at build time (e.g. Vercel env).
  */
 
 import type {
@@ -12,7 +13,14 @@ import type {
   ArtifactOutput,
 } from '../types/models';
 
-const BASE = '/api';
+const BASE = typeof import.meta.env.VITE_API_URL === 'string' && import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace(/\/$/, '')
+  : '/api';
+
+/** Resolved API base URL (for debugging: check DevTools or UI footer). */
+export function getApiBase(): string {
+  return BASE;
+}
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
