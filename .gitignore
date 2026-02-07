@@ -11,6 +11,9 @@ build/
 .env.local
 .env.*.local
 
+# Cloudflare tunnel (contains your tunnel ID and credentials path)
+cloudflared-config.yml
+
 # IDE and OS
 .idea/
 .vscode/

@@ -97,12 +97,12 @@ Questions and mechanisms are defined in `config/question_set.json` and `config/m
 
 ## Development plan
 
-Full weekly plan (MVP + production) is in **[DEVELOPMENT.md](./DEVELOPMENT.md)** — Weeks 1–17 with checkboxes. Summary:
+Requirements: **[docs/REQUIREMENTS.md](docs/REQUIREMENTS.md)**. Full weekly plan (MVP + production) is in **[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)** — 12 weeks with checkboxes. Summary:
 
-- **Weeks 1–3:** Setup, data model, SQLite, UI shell.
-- **Weeks 4–10:** Case/session, Q1–Q5 flow, proposals, operator overlay, finalize, artifact view/export, pilot testing.
-- **Weeks 11–12:** Guardrails, observability, env/CORS, first deployment.
-- **Weeks 13–17:** Production hardening (env, auth, observability, deploy, optional Postgres/HTTPS/backups, docs).
+- **Weeks 1–3:** Setup, data model, SQLite, UI shell, Case/Session flows.
+- **Weeks 4–7:** Q1–Q5 flow, proposals, operator overlay, finalize, artifact view/export, pilot testing.
+- **Weeks 8–9:** Guardrails, observability, env/CORS, first deployment.
+- **Weeks 10–12:** Production hardening, optional auth/upgrades, docs, acceptance sign-off.
 
 ## Do not
 

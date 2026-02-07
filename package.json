@@ -7,6 +7,8 @@
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "npm run dev --workspace=backend",
     "dev:frontend": "npm run dev --workspace=frontend",
+    "start:backend": "npm run build --workspace=backend && npm run start --workspace=backend",
+    "start:backend:prod": "npm run build --workspace=backend && npm run start:production --workspace=backend",
     "build": "npm run build --workspaces --if-present",
     "build:backend": "npm run build --workspace=backend",
     "build:frontend": "npm run build --workspace=frontend"
